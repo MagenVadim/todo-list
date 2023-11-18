@@ -7,10 +7,11 @@ function App() {
   const [todos, setTodos] = useState(
     [
       {id: 1, title: 'First todo', completed: false},
-      {id: 2, title: 'Second todo', completed: true},
+      {id: 2, title: 'Second todo', completed: false},
     ]
   )
   const [todoTitle, setTodoTitle] = useState('')
+
   const addTodo = event => {
     if (event.key === "Enter"){
       setTodos(
@@ -19,8 +20,9 @@ function App() {
             id: Date.now(),
             title: todoTitle,
             completed: false
-        }]
-      )
+        }
+      ])
+      setTodoTitle('')      
     }
   }
 
