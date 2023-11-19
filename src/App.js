@@ -26,6 +26,12 @@ function App() {
     }
   }
 
+  const deleteTodo = (prevTodo) =>{
+    setTodos(todos.filter(p => p!=prevTodo))
+    console.log(todos)
+  }
+
+
   return (
     <div className="container">
       <h1>TODO app</h1>
@@ -40,7 +46,7 @@ function App() {
          />
       </div>
 
-      <TodoList todos={todos}/>
+      <TodoList todos={todos} deleteTodo={deleteTodo}/>
     </div>
   );
 }
